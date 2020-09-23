@@ -6,18 +6,18 @@ https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/
 
 Please feel free to click on my app (work in progress) to input a dog description.
 
-click on the picture below
+click on the picture 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/nichi-logo-ears.png" width=50%>
 
-Or
+or
 
-click on the link below
+click on the link 
 [(http://3.97.11.148:5008/)](http://3.97.11.148:5008/)
 
 
 
-Of
+or
 
-use the QR code below
+use the QR code with your phone app
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/qr-code.png" width=50>
 
