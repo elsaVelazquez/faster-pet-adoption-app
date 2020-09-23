@@ -1,0 +1,33 @@
+/* .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.btn-custom {
+    background-color: hsl(90, 43%, 72%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5f0da", endColorstr="#b7d698");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#e5f0da), to(#b7d698));
+    background-image: -moz-linear-gradient(top, #e5f0da, #b7d698);
+    background-image: -ms-linear-gradient(top, #e5f0da, #b7d698);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5f0da), color-stop(100%, #b7d698));
+    background-image: -webkit-linear-gradient(top, #e5f0da, #b7d698);
+    background-image: -o-linear-gradient(top, #e5f0da, #b7d698);
+    background-image: linear-gradient(#e5f0da, #b7d698);
+    border-color: #b7d698 #b7d698 hsl(90, 43%, 67.5%);
+    color: red !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.29);
+    -webkit-font-smoothing: antialiased;
+  } */
+  
+  /* .btn-custom:hover{
+    background-color: rgb(247, 0, 255) !important;
+  } */
+  hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 100px;
+  }
