@@ -172,6 +172,10 @@ class TextClassifier(object):
         # # print(dataf['cos_sim'][0])
         # return dataf['cos_sim'][0]
 
+    def recommend(tfidf_adoptable, tfidf_adopted):
+        print(tfidf_adoptable)
+        a = tfidf_adoptable
+        print("recommed passed: ", a)
 
 class SentimAnalysis(object):
     def __init__(self):
@@ -224,7 +228,7 @@ if __name__ == '__main__':
     
     # res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
     # print(res_tfidf_adoptable); 
-    
+    # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
     # test_string_pred = ['bad, bad dog']
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
     # print("Your input invokes the following sentiment: ", res_sentiment); 
