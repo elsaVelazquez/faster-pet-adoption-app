@@ -66,8 +66,17 @@ def euclidean_function(vectors):
 # 	dataf['euclidean'] = lis2 
 # 	return dataf 
 
+def convert_adoptable(): 
+    dataf = pd.DataFrame() 
+    lis2 = arr_convert_1d(manhatten) 
+    dataf['manhatten'] = lis2 
+    lis2 = arr_convert_1d(cos) 
+    dataf['cos_sim'] = lis2 
+    lis2 = (arr_convert_1d(euclidean) ) - 1
+    dataf['euclidean'] = lis2 
+    return dataf 
 
-def convert(): 
+def convert_adopted(): 
     dataf = pd.DataFrame() 
     lis2 = arr_convert_1d(manhatten) 
     dataf['manhatten'] = lis2 
@@ -129,7 +138,7 @@ class TextClassifier(object):
         # lis2 = (arr_convert_1d(euclidean) ) - 1
         # dataf['euclidean'] = lis2 
         # return dataf 
-        return convert() 
+        return convert_adopted() 
 
     def tfidf_adoptable(self, data): 
         txt=txt_adoptable
@@ -150,18 +159,18 @@ class TextClassifier(object):
         euclidean_function(trans) 
         cosine(trans) 
         manhatten_distance(trans) 
-        # return convert() 
-        dataf = pd.DataFrame() 
-        lis2 = arr_convert_1d(manhatten) 
-        dataf['manhatten'] = lis2 
-        lis2 = arr_convert_1d(cos) 
-        dataf['cos_sim'] = lis2 
-        lis2 = (arr_convert_1d(euclidean) ) - 1
-        dataf['euclidean'] = lis2 
-        # print("type of dataf", dataf['euclidean'] ) dataf['euclidean']
-        print(type(dataf))
-        print(dataf['cos_sim'][0])
-        return dataf['cos_sim'][0]
+        return convert_adoptable() 
+        # dataf = pd.DataFrame() 
+        # lis2 = arr_convert_1d(manhatten) 
+        # dataf['manhatten'] = lis2 
+        # lis2 = arr_convert_1d(cos) 
+        # dataf['cos_sim'] = lis2 
+        # lis2 = (arr_convert_1d(euclidean) ) - 1
+        # dataf['euclidean'] = lis2 
+        # # print("type of dataf", dataf['euclidean'] ) dataf['euclidean']
+        # # print(type(dataf))
+        # # print(dataf['cos_sim'][0])
+        # return dataf['cos_sim'][0]
 
 
 class SentimAnalysis(object):
@@ -213,8 +222,8 @@ if __name__ == '__main__':
     # res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
     # print(res_tfidf_adopted); 
     
-    res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
-    print(res_tfidf_adoptable); 
+    # res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
+    # print(res_tfidf_adoptable); 
     
     # test_string_pred = ['bad, bad dog']
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
