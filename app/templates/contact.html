@@ -194,15 +194,101 @@ A:hover { COLOR: #e9f5f2; TEXT-DECORATION: underline; font-weight: normal }
 
 <main role="main" class="container">
 
+
+
+
+
+
+
+  
+  
+  <style>
+    p:hover{
+      background-color: #e9f5f2;
+    }
+    /* div {background-color: green;} */
+div a {
+  text-decoration: none;
+  color: #08f0b6;
+  font-size: 18px;
+  /* padding: 15px;  */
+  display:inline-block;
+}
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: black;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 100px;
+  display: none;
+  align: left;
+}
+ul li ul li { 
+  background: black; 
+  display: block; 
+  text-align: center;
+  padding: 8px;
+}
+ul li ul li a {display:block !important;} 
+ul li ul li:hover {background: black;}
+
+/* A:link { COLOR: black; TEXT-DECORATION: none; font-weight: normal } */
+A:visited { COLOR: darkgrey; TEXT-DECORATION: none; font-weight: normal }
+A:active { COLOR: green; TEXT-DECORATION: none }
+A:hover { COLOR: #e9e9f5; TEXT-DECORATION: underline; font-weight: normal }
+   
+#hiddenmenu {
+  background-color: white;
+	position: fixed;
+  top: 0;
+  z-index:1;
+	width: 100%;
+  height: 100px;
+  }
+#header {
+  background-color: white;
+  width: 100%;
+  top: 0;
+  position:absolute;
+  z-index:2;
+  }
+#body {
+  padding-top: 0px;
+  position:absolute;
+  background-color: white;
+	width: 100%;
+  z-index: auto;
+  }
+  hr{
+    margin-top: 0.35em !important;
+    margin-bottom: 0.35em !important;
+    border-width: 1px;
+    background-color: #white;
+    border: none;
+    }
+  h3{
+    color: slategray;
+  }
+    </style>
+
+
+
+
+
   <div class="starter-template">
     <h1>Contact Elsa Velazquez</h1>
     <p class="lead">Please contact me at:</p> 
     elsavelazquez@colorado.edu
-    <h6 style="color:black "><a href="mailto:elsa.velazquez@colorado.edu">elsa.velazquez@colorado.edu</a>.</h6>
+    <h2 style="color:black "><a href="mailto:elsa.velazquez@colorado.edu">elsa.velazquez@colorado.edu</a></h2>
     
-<br>    <a href="https://www.linkedin.com/in/elsa-data-sci/" target="_blank">LinkedIn</a>       
-   <p></p><br> <a href="https://github.com/elsaVelazquez/faster-pet-adoption-app" target="_blank">GitHub</a> 
-   <br><br><br>
+<br>    <h3><a style="color:blue " href="https://www.linkedin.com/in/elsa-data-sci/" target="_blank">LinkedIn</a> </h3>      
+   <p></p><br> <h3><a style="color:blue "href="https://github.com/elsaVelazquez/faster-pet-adoption-app" target="_blank">GitHub</a> </h3>
+   <br>
    <br>
   </div>
 
