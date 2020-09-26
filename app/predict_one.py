@@ -223,11 +223,11 @@ if __name__ == '__main__':
     # print("Your MNB description yields: ", res_mnb)
 
 
-    # res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
+    res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
     # print(res_tfidf_adopted); 
     
-    # res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
-    # print(res_tfidf_adoptable); 
+    res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
+    print(res_tfidf_adoptable); 
     # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
     # test_string_pred = ['bad, bad dog']
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 

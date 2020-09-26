@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, jsonify
 import pickle
 from predict_one import TextClassifier, SentimAnalysis
@@ -61,5 +60,3 @@ def contact():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5008, debug=True)
-    
-
