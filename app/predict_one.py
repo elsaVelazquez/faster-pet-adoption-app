@@ -53,18 +53,7 @@ euclidean = []
 def euclidean_function(vectors): 
 	euc=euclidean_distances(vectors[0], vectors[1]) 
 	euclidean.append(euc) 
- 
-# def convert(): 
-# 	dataf = pd.DataFrame() 
-# 	lis2 = arr_convert_1d(manhatten) 
-# 	dataf['manhatten'] = lis2 
-# 	lis2 = arr_convert_1d(cos) 
-# 	dataf['cos_sim'] = lis2 
-# 	lis2 = (arr_convert_1d(euclidean) ) - 1
-# 	if lis2 < 0.005:
-# 		lis2 = 0
-# 	dataf['euclidean'] = lis2 
-# 	return dataf 
+
 
 def convert_adoptable(): 
     dataf = pd.DataFrame() 
@@ -130,14 +119,6 @@ class TextClassifier(object):
         euclidean_function(trans) 
         cosine(trans) 
         manhatten_distance(trans) 
-        # dataf = pd.DataFrame() 
-        # lis2 = arr_convert_1d(manhatten) 
-        # dataf['manhatten'] = lis2 
-        # lis2 = arr_convert_1d(cos) 
-        # dataf['cos_sim'] = lis2 
-        # lis2 = (arr_convert_1d(euclidean) ) - 1
-        # dataf['euclidean'] = lis2 
-        # return dataf 
         return convert_adopted() 
 
     def tfidf_adoptable(self, data): 
@@ -160,17 +141,7 @@ class TextClassifier(object):
         cosine(trans) 
         manhatten_distance(trans) 
         return convert_adoptable() 
-        # dataf = pd.DataFrame() 
-        # lis2 = arr_convert_1d(manhatten) 
-        # dataf['manhatten'] = lis2 
-        # lis2 = arr_convert_1d(cos) 
-        # dataf['cos_sim'] = lis2 
-        # lis2 = (arr_convert_1d(euclidean) ) - 1
-        # dataf['euclidean'] = lis2 
-        # # print("type of dataf", dataf['euclidean'] ) dataf['euclidean']
-        # # print(type(dataf))
-        # # print(dataf['cos_sim'][0])
-        # return dataf['cos_sim'][0]
+
 
     def recommend(tfidf_adoptable, tfidf_adopted):
         print(tfidf_adoptable)
@@ -204,36 +175,34 @@ class SentimAnalysis(object):
 if __name__ == '__main__':
     pass
 
-    ### BEGIN test the script 
+    ### BEGIN test scripts 
     
     # # instantiate object
-    my_classifier = TextClassifier()
-    my_sentim = SentimAnalysis()
-    # my_tfidf = TextTFIDF()
-    #test negative sentiment
-    # test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    # my_classifier = TextClassifier()
+    # my_sentim = SentimAnalysis()
+    # # my_tfidf = TextTFIDF()
+    # #test negative sentiment
+    # # test_string_pred = ['this girl is a foster pit and has none of her teeth']
     
-    # #test positive sentimnet
-    test_string_pred = ['fill out an online form to find this male puppy a forever home']
+    # # #test positive sentimnet
+    # test_string_pred = ['fill out an online form to find this male puppy a forever home']
     
-    # #test empty string
-    # test_string_pred = ['bad']
+    # # #test empty string
+    # # test_string_pred = ['bad']
 
-    # res_mnb = my_classifier.predict_one(test_string_pred)
-    # print("Your MNB description yields: ", res_mnb)
-
-
-    res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
-    # print(res_tfidf_adopted); 
-    
-    res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
-    print(res_tfidf_adoptable); 
-    # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
-    # test_string_pred = ['bad, bad dog']
-    res_sentiment = my_sentim.sentiment_((test_string_pred)); 
-    print("Your input invokes the following sentiment: ", res_sentiment); 
-    
+    # # res_mnb = my_classifier.predict_one(test_string_pred)
+    # # print("Your MNB description yields: ", res_mnb)
 
 
+    # res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
+    # # print(res_tfidf_adopted); 
     
-    #### END test the script 
+    # res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
+    # print(res_tfidf_adoptable); 
+    # # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
+    # # test_string_pred = ['bad, bad dog']
+    # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
+    # print("Your input invokes the following sentiment: ", res_sentiment); 
+    
+    
+    #### END test scripts

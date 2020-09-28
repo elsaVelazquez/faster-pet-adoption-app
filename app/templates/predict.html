@@ -144,6 +144,10 @@
   h3 {
     color: slategray;
   }
+  h3r {
+    color: red;
+    font-size: 18px;
+  }
 </style>
 
 
@@ -241,82 +245,62 @@
 
           </tr>
         </tbody>
-      </table>
-    </div> <!-- END CLASS SUBNAV -->
-  </div> <!-- END CLASS CONTAINER -->
-
-  <body>
-    <div class="container">
-
-      <!-- <div class="starter-template"> -->
-        <h1>Faster Pet Adoption</h1>
-        <h2>Will Your Description Get the Dog Adopted?</h2>
-
-
         <table align='center'>
           <tbody align='center'>
-            <tr>
-              <td>
-                <h3><span style="color: rgb(132, 0, 255); font-weight: bold;">Your input:</span></h3>
+<tr >
+<td >
+  
+                  <h3><span style="color: rgb(132, 0, 255); font-weight: bold;">Your input:</span></h3>
                 <p>{{ description }}</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3><span style="color: red; font-weight: bold;" align="center">Final Recommendation</span></h3>
-                <p>{{ recommend }}</p>
-              </td>
-            </tr>
-            <tr>
-              <td><br><br>
-                <span style="color: rgb(26, 139, 134); font-weight: bold;">TFIDF Cosine Similarity Scores:</span></td>
-            </tr>
-            <tr>
-              <td>
+  
+  <h3><span style="color: red; font-weight: bold;" align="center">Recommendation</span></h3>
+                <h3r><p>{{ recommend }}</p></h3r>
 
-                <table align='center'>
-                  <tbody align='center'>
-
-                    <tr align='center'>
-
-                    <tr>
-
-                      <td>
-                        <span style="color: rgb(26, 139, 134); font-weight: bold;">Already <br>Adopted</span>
+  </td>
+</tr>
+<tr >
+<td >
+<table align="center" cellpadding="25%">
+<tbody align="center">
+<tr align="center">
+<td>
+<span style="color: rgb(26, 139, 134); font-weight: bold;">TFIDF <br>Cosine Similarity <br>Scores:</span>
+<table>
+<tbody>
+<tr align="center">
+<td>
+  <span style="color: rgb(26, 139, 134); font-weight: bold;">Already <br>Adopted</span>
                         <p>{{ cosim_adopted }}</p>
-                      </td>
-                      <td> <span style="color: rgb(26, 139, 134); font-weight: bold;">&nbsp;&nbsp;Still <br>&nbsp;&nbsp;In Shelters</span>
+  
+  </td>
+<td>
+  
+  <span style="color: rgb(26, 139, 134); font-weight: bold;">&nbsp;&nbsp;Still <br>&nbsp;&nbsp;In Shelters</span>
                         <p>{{ cosim_adoptable }}</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td><h3>Sentiment Analysis</h3>  <p>{{ sentiment }}</p> </td>             
-
-            </tr>
-            <tr>
-              <td>
-                <span style="color: green; font-weight: bold;">Multinomial Naive Bayes, F1 Score 86%, Classifies this Description of the likelihood of
-                  adoption as: </span>
-                <p>{{ predicted }}</p>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      <!-- </div> -->
-      <!-- /.container -->
-
-
-  </body>
-
-</html>
-
-
-<!-- FOOTER -->
+  
+  </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<h3>Sentiment <br>Analysis</h3>
+<p>{{ sentiment }}</p><br>
+</td>
+<td><span style="color: green; font-weight: bold;">Multinomial Naive Bayes <br>F1 Score 86% <br>Classifies this Description's <br>likelihood of adoption as: </span>
+<p>{{ predicted }}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr style="height: 23px;" align="right">
+<td style="height: 23px;">
+  
+  
+  
+  <!-- FOOTER -->
 <footer>
   <table>
     <tbody>
@@ -324,8 +308,8 @@
         <td></td>
         <td><img width="4%" height="4%" align="right" src="static/img/favicon-nichi.png"></td>
         <td>
-          <a href="http://www.elsa-data-sci.tech/">
-            <h6 style="color:blue ">http://elsa-data-sci.tech</h6>
+          <a href="https://www.elsa-data-sci.tech/">
+            <h6 style="color:blue ">https://elsa-data-sci.tech</h6>
           </a>
 
 
@@ -335,3 +319,18 @@
   </table>
 
 </footer>
+
+  </td>
+</tr>
+</tbody>
+</table>
+<!-- DivTable.com -->
+      <!-- </div> -->
+      <!-- /.container -->
+
+
+  </body>
+
+</html>
+
+

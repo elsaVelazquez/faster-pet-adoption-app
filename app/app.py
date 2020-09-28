@@ -26,18 +26,15 @@ def predict():
     """
     data = str(request.form['article_body']) #user input
     pred = str(clf.predict_one([data])) 
-    # tf_adopted = (clf.tfidf_adopted([data])) 
-    #cosim
     tf_adopted_ = (clf.tfidf_adopted([data])) 
-    tf_adopted_str = str(tf_adopted_['cos_sim'][0:])
+    tf_adopted_str = str(tf_adopted_['cos_sim'][0:][::-1])
     tf_adopted = tf_adopted_str[1:10]
     
     tf_adoptable_ = (clf.tfidf_adoptable([data])) 
-    tf_adoptable_str = str(tf_adoptable_['cos_sim'][1:])
+    tf_adoptable_str = str(tf_adoptable_['cos_sim'][1:][::-1])
     tf_adoptable = tf_adoptable_str[1:10]
     sentim = (my_sentim.sentiment_([data])) 
-    # if tf_adoptable > tf_adopted:
-    #     tf_adoptable = "change description"
+    rec = ''
     if float(tf_adoptable) > float(tf_adopted):
         rec = "Change the description."
     elif (float(tf_adopted) >  float(tf_adoptable)):
