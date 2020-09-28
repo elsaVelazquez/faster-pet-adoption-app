@@ -17,6 +17,10 @@ use the QR code with your phone app
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/nichi-logo-ears.png" >
 
 ---  
+To see more demo projects visit my main page:
+[(https://elsa-data-sci.tech/)](https://elsa-data-sci.tech/)
+
+---  
 
 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/full_presentation/full_DSI_presentation-02.jpg" >
