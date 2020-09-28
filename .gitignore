@@ -2,7 +2,6 @@
 *.JSON
 .vscode/
 settings.json
-*.jpg
 *.mat
 *.pyc
 *.__pycache__
