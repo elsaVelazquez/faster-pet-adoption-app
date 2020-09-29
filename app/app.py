@@ -24,6 +24,14 @@ def predict():
     """Recieve the description to be classified from an input form and use the
     models to classify and predict.
     """
+    tf_adopted_ = ''
+    tf_adopted = ''
+    tf_adopted_str = ''
+    tf_adoptable_ = ''
+    tf_adoptable = ''
+    tf_adoptable_str = ''   
+    
+    
     data = str(request.form['article_body']) #user input
     pred = str(clf.predict_one([data])) 
     tf_adopted_ = (clf.tfidf_adopted([data])) 
