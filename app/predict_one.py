@@ -31,16 +31,24 @@ txt_adoptable = '../app/data/adoptable_csv.csv'
 scraped_data_adoptable = open('../app/data/adoptable_corpus.txt', 'r').read()
 
 ## Converting 3D array of array into 1D array 
-def arr_convert_1d(arr): 
-	arr = np.array(arr) 
-	arr = np.concatenate( arr, axis=0 ) 
-	arr = np.concatenate( arr, axis=0 ) 
-	return arr 
+def arr_convert_1d(arr):
+    arr = np.array(arr)
+    arr = np.concatenate( arr, axis=0 )
+    arr = np.concatenate( arr, axis=0 )
+    # print(arr)
+    return arr 
+
+def arr_convert_1d_adopted(arr):
+    arr = np.array(arr)
+    arr = np.concatenate( arr, axis=0 )
+    arr = np.concatenate( arr, axis=0 )
+    # print(arr)
+    return arr 
 
 ## Cosine Similarity 
 cos = [] 
-def cosine(trans): 
-	cos.append(cosine_similarity(trans[0], trans[1])) 
+def cosine(trans):
+    cos.append(cosine_similarity(trans[0], trans[1]))
 
 # Manhatten Distance 
 manhatten = [] 
@@ -56,27 +64,28 @@ def euclidean_function(vectors):
 
 
 def convert_adoptable(): 
-    dataf = pd.DataFrame() 
-    lis2 = arr_convert_1d(manhatten) 
-    dataf['manhatten'] = lis2 
-    lis2 = arr_convert_1d(cos) 
-    dataf['cos_sim'] = lis2 
-    lis2 = (arr_convert_1d(euclidean) ) - 1
-    dataf['euclidean'] = lis2 
-    return dataf 
+    dataf_adoptable = pd.DataFrame() 
+    lis2_adoptable = arr_convert_1d(manhatten) 
+    dataf_adoptable['manhatten'] = lis2_adoptable 
+    lis2_adoptable = arr_convert_1d(cos) 
+    dataf_adoptable['cos_sim'] = lis2_adoptable 
+    lis2_adoptable = (arr_convert_1d(euclidean) ) - 1
+    dataf_adoptable['euclidean'] = lis2_adoptable 
+    return dataf_adoptable['cos_sim'][::-1][1]
 
 def convert_adopted(): 
-    dataf = pd.DataFrame() 
-    lis2 = arr_convert_1d(manhatten) 
-    dataf['manhatten'] = lis2 
-    lis2 = arr_convert_1d(cos) 
-    dataf['cos_sim'] = lis2 
-    lis2 = (arr_convert_1d(euclidean) ) - 1
-    dataf['euclidean'] = lis2 
-    return dataf 
+    dataf_adopted = pd.DataFrame() 
+    lis2_adopted = arr_convert_1d_adopted(manhatten) 
+    dataf_adopted['manhatten'] = lis2_adopted 
+    lis2_adopted = arr_convert_1d_adopted(cos) 
+    dataf_adopted['cos_sim'] = lis2_adopted 
+    lis2_adopted = (arr_convert_1d_adopted(euclidean) ) - 1
+    dataf_adopted['euclidean'] = lis2_adopted 
+    # print(dataf_adopted['cos_sim'][::-1][0])
+    return dataf_adopted['cos_sim'][::-1][0]
 
 
-class TextClassifier(object):
+class TextClassifierAdopted(object):
     def __init__(self):
         with open('pickled_algos/pickled_nb.pickle', 'rb') as f:
             self.model = pickle.load(f)
@@ -120,6 +129,35 @@ class TextClassifier(object):
         cosine(trans) 
         manhatten_distance(trans) 
         return convert_adopted() 
+    
+    
+    
+    
+class TextClassifierAdoptable(object):
+    def __init__(self):
+        with open('pickled_algos/pickled_nb.pickle', 'rb') as f:
+            self.model = pickle.load(f)
+        with open('pickled_algos/tfidf_transformer.pickle', 'rb') as f:
+            self.tfidf = pickle.load(f)
+        with open('pickled_algos/count_vect.pickle', 'rb') as f:
+            self.cv = pickle.load(f)  
+
+    def predict_one(self, data):
+        cv_transformed = self.cv.transform(data) #counts how many words
+        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
+        string_predicted = self.model.predict(tfidf_transformed) 
+        length = str(len((str(data))))
+        if length == '4':
+            error = 'Error.  You did not input a description.  Please try agian.'
+            return error
+        res_mnb = str(string_predicted[0])
+        if res_mnb == '0':
+            res_mnb = ('Less Likely to be Adopted')
+        else:
+            res_mnb = ("More Likely Than Not to be Adopted")
+        return res_mnb 
+    
+
 
     def tfidf_adoptable(self, data): 
         txt=txt_adoptable
@@ -143,10 +181,6 @@ class TextClassifier(object):
         return convert_adoptable() 
 
 
-    def recommend(tfidf_adoptable, tfidf_adopted):
-        print(tfidf_adoptable)
-        a = tfidf_adoptable
-        print("recommed passed: ", a)
 
 class SentimAnalysis(object):
     def __init__(self):
@@ -178,11 +212,13 @@ if __name__ == '__main__':
     ### BEGIN test scripts 
     
     # # instantiate object
-    # my_classifier = TextClassifier()
-    # my_sentim = SentimAnalysis()
-    # # my_tfidf = TextTFIDF()
+    my_classifier_adoptable = TextClassifierAdoptable()
+    my_classifier_adopted = TextClassifierAdopted()
+
+    my_sentim = SentimAnalysis()
     # #test negative sentiment
-    # # test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    # test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    test_string_pred = ['very happy dog wants a forever home']
     
     # # #test positive sentimnet
     # test_string_pred = ['fill out an online form to find this male puppy a forever home']
@@ -194,11 +230,11 @@ if __name__ == '__main__':
     # # print("Your MNB description yields: ", res_mnb)
 
 
-    # res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
-    # # print(res_tfidf_adopted); 
+    res_tfidf_adopted = my_classifier_adopted.tfidf_adopted(str(test_string_pred)); 
+    print("ADOPTED: ", res_tfidf_adopted)
     
-    # res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
-    # print(res_tfidf_adoptable); 
+    res_tfidf_adoptable = my_classifier_adoptable.tfidf_adoptable(str(test_string_pred)); 
+    print("ADOPTABLE: ", res_tfidf_adoptable); 
     # # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
     # # test_string_pred = ['bad, bad dog']
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
