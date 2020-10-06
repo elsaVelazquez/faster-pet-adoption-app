@@ -1,5 +1,5 @@
 # Faster Pet Adoption App
-## Strategic Marketing Solutions- Use Case: Get Dogs Adopted Faster from Animal Shelters
+## Strategic Marketing Solutions- Use Case: Get Dogs Adopted Out of Animal Shelters Faster
 
 Please feel free to click on my app (work in progress) to input a dog description.
 
