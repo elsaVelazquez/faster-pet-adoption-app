@@ -30,6 +30,7 @@ scraped_data_adopted = open('../app/data/adopted_corpus.txt', 'r').read()
 txt_adoptable = '../app/data/adoptable_csv.csv'
 scraped_data_adoptable = open('../app/data/adoptable_corpus.txt', 'r').read()
 
+
 ## Converting 3D array of array into 1D array 
 def arr_convert_1d(arr):
     arr = np.array(arr)
@@ -71,7 +72,7 @@ def convert_adoptable():
     dataf_adoptable['cos_sim'] = lis2_adoptable 
     lis2_adoptable = (arr_convert_1d(euclidean) ) - 1
     dataf_adoptable['euclidean'] = lis2_adoptable 
-    return dataf_adoptable['cos_sim'][::-1][1]
+    return dataf_adoptable['cos_sim'][::-1].iloc[0]
 
 def convert_adopted(): 
     dataf_adopted = pd.DataFrame() 
@@ -82,7 +83,7 @@ def convert_adopted():
     lis2_adopted = (arr_convert_1d_adopted(euclidean) ) - 1
     dataf_adopted['euclidean'] = lis2_adopted 
     # print(dataf_adopted['cos_sim'][::-1][0])
-    return dataf_adopted['cos_sim'][::-1][0]
+    return dataf_adopted['cos_sim'][::-1].iloc[0]
 
 
 class TextClassifierAdopted(object):
@@ -209,36 +210,25 @@ class SentimAnalysis(object):
 if __name__ == '__main__':
     pass
 
-    ### BEGIN test scripts 
+    ## BEGIN test scripts 
     
-    # # instantiate object
+    # #instantiate object
     # my_classifier_adoptable = TextClassifierAdoptable()
     # my_classifier_adopted = TextClassifierAdopted()
 
     # my_sentim = SentimAnalysis()
-    # # #test negative sentiment
-    # # test_string_pred = ['this girl is a foster pit and has none of her teeth']
-    # test_string_pred = ['very happy dog wants a forever home']
     
-    # # # #test positive sentimnet
-    # # test_string_pred = ['fill out an online form to find this male puppy a forever home']
-    
-    # # # #test empty string
-    # # # test_string_pred = ['bad']
-
-    # # # res_mnb = my_classifier.predict_one(test_string_pred)
-    # # # print("Your MNB description yields: ", res_mnb)
-
+    # # # # #test empty string
+    # test_string_pred = ['sweet dog seeks forever home']
 
     # res_tfidf_adopted = my_classifier_adopted.tfidf_adopted(str(test_string_pred)); 
     # print("ADOPTED: ", res_tfidf_adopted)
     
     # res_tfidf_adoptable = my_classifier_adoptable.tfidf_adoptable(str(test_string_pred)); 
     # print("ADOPTABLE: ", res_tfidf_adoptable); 
-    # # # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
-    # # # test_string_pred = ['bad, bad dog']
+
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
     # print("Your input invokes the following sentiment: ", res_sentiment); 
     
     
-    #### END test scripts
+    ### END test scripts

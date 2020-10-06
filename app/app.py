@@ -25,14 +25,7 @@ def predict():
     """Recieve the description to be classified from an input form and use the
     models to classify and predict.
     """
-    # tf_adopted_ = ''
-    # tf_adopted = ''
-    # tf_adopted_str = ''
-    # tf_adoptable_ = ''
-    # tf_adoptable = ''
-    # tf_adoptable_str = ''   
-    
-    
+
     data = str(request.form['article_body']) #user input
     pred = str(clf_adopted.predict_one([data])) 
     tf_adopted = (clf_adopted.tfidf_adopted([data])) 
@@ -44,13 +37,15 @@ def predict():
         rec = "Keep the description."
     else:
         "Please check your input and try again."
+        
     
-    #limit how many digits get printed
-    # tf_adopted_str = str(tf_adopted)
-    # tf_adopted = tf_adopted_str[:6]
-    # tf_adoptable_str = str(tf_adoptable)
-    # tf_adoptable = tf_adoptable_str[:6]   
+    # limit how many digits get printed
+    tf_adopted_str = str(tf_adopted)
+    tf_adopted = tf_adopted_str[:6]
+    tf_adoptable_str = str(tf_adoptable)
+    tf_adoptable = tf_adoptable_str[:6]   
     sentim = (my_sentim.sentiment_([data])) 
+    
 
     return render_template('predict.html', description=data, predicted=pred, cosim_adopted=tf_adopted, cosim_adoptable=tf_adoptable, sentiment=sentim, recommend = rec)
 
