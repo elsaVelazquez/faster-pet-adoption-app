@@ -35,14 +35,14 @@ def arr_convert_1d(arr):
     arr = np.array(arr)
     arr = np.concatenate( arr, axis=0 )
     arr = np.concatenate( arr, axis=0 )
-    # print(arr)
+    print(arr)
     return arr 
 
 def arr_convert_1d_adopted(arr):
     arr = np.array(arr)
     arr = np.concatenate( arr, axis=0 )
     arr = np.concatenate( arr, axis=0 )
-    # print(arr)
+    print(arr)
     return arr 
 
 ## Cosine Similarity 
@@ -85,7 +85,7 @@ def convert_adopted():
     return dataf_adopted['cos_sim'][::-1][0]
 
 
-class TextClassifierAdopted(object):
+class TextClassifier(object):
     def __init__(self):
         with open('pickled_algos/pickled_nb.pickle', 'rb') as f:
             self.model = pickle.load(f)
@@ -129,35 +129,6 @@ class TextClassifierAdopted(object):
         cosine(trans) 
         manhatten_distance(trans) 
         return convert_adopted() 
-    
-    
-    
-    
-class TextClassifierAdoptable(object):
-    def __init__(self):
-        with open('pickled_algos/pickled_nb.pickle', 'rb') as f:
-            self.model = pickle.load(f)
-        with open('pickled_algos/tfidf_transformer.pickle', 'rb') as f:
-            self.tfidf = pickle.load(f)
-        with open('pickled_algos/count_vect.pickle', 'rb') as f:
-            self.cv = pickle.load(f)  
-
-    def predict_one(self, data):
-        cv_transformed = self.cv.transform(data) #counts how many words
-        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
-        string_predicted = self.model.predict(tfidf_transformed) 
-        length = str(len((str(data))))
-        if length == '4':
-            error = 'Error.  You did not input a description.  Please try agian.'
-            return error
-        res_mnb = str(string_predicted[0])
-        if res_mnb == '0':
-            res_mnb = ('Less Likely to be Adopted')
-        else:
-            res_mnb = ("More Likely Than Not to be Adopted")
-        return res_mnb 
-    
-
 
     def tfidf_adoptable(self, data): 
         txt=txt_adoptable
@@ -181,6 +152,10 @@ class TextClassifierAdoptable(object):
         return convert_adoptable() 
 
 
+    def recommend(tfidf_adoptable, tfidf_adopted):
+        print(tfidf_adoptable)
+        a = tfidf_adoptable
+        print("recommed passed: ", a)
 
 class SentimAnalysis(object):
     def __init__(self):
@@ -212,31 +187,29 @@ if __name__ == '__main__':
     ### BEGIN test scripts 
     
     # # instantiate object
-    # my_classifier_adoptable = TextClassifierAdoptable()
-    # my_classifier_adopted = TextClassifierAdopted()
-
-    # my_sentim = SentimAnalysis()
-    # # #test negative sentiment
-    # # test_string_pred = ['this girl is a foster pit and has none of her teeth']
-    # test_string_pred = ['very happy dog wants a forever home']
+    my_classifier = TextClassifier()
+    my_sentim = SentimAnalysis()
+    # #test negative sentiment
+    test_string_pred = ['this girl is a foster pit and has none of her teeth']
+    # test_string_pred = ['bad doggo']
     
-    # # # #test positive sentimnet
-    # # test_string_pred = ['fill out an online form to find this male puppy a forever home']
+    # # #test positive sentimnet
+    # test_string_pred = ['fill out an online form to find this male puppy a forever home']
     
-    # # # #test empty string
-    # # # test_string_pred = ['bad']
+    # # #test empty string
+    # # test_string_pred = ['bad']
 
-    # # # res_mnb = my_classifier.predict_one(test_string_pred)
-    # # # print("Your MNB description yields: ", res_mnb)
+    # # res_mnb = my_classifier.predict_one(test_string_pred)
+    # # print("Your MNB description yields: ", res_mnb)
 
 
-    # res_tfidf_adopted = my_classifier_adopted.tfidf_adopted(str(test_string_pred)); 
-    # print("ADOPTED: ", res_tfidf_adopted)
+    res_tfidf_adopted = my_classifier.tfidf_adopted(str(test_string_pred)); 
+    # print(res_tfidf_adopted)
     
-    # res_tfidf_adoptable = my_classifier_adoptable.tfidf_adoptable(str(test_string_pred)); 
-    # print("ADOPTABLE: ", res_tfidf_adoptable); 
-    # # # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
-    # # # test_string_pred = ['bad, bad dog']
+    res_tfidf_adoptable = my_classifier.tfidf_adoptable(str(test_string_pred)); 
+    # print(res_tfidf_adoptable); 
+    # # my_classifier.recommend(my_classifier.tfidf_adopted) #(my_classifier.tfidf_adoptable, my_classifier.tfidf_adopted)
+    # # test_string_pred = ['bad, bad dog']
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
     # print("Your input invokes the following sentiment: ", res_sentiment); 
     
