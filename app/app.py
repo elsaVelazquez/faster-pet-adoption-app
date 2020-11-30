@@ -39,7 +39,7 @@ def predict():
         "Please check your input and try again."
         
     
-    # limit how many digits get printed
+    # limit significant figures
     tf_adopted_str = str(tf_adopted)
     tf_adopted = tf_adopted_str[:6]
     tf_adoptable_str = str(tf_adoptable)
