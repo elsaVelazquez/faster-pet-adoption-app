@@ -1,26 +1,12 @@
 import numpy as np
 import pandas as pd
-from sklearn.datasets import fetch_20newsgroups
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-import random
 import pickle
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import f1_score
 from sklearn.feature_extraction.text import TfidfVectorizer 
 from sklearn.metrics.pairwise import cosine_similarity 
 from sklearn.metrics import pairwise_distances 
 from sklearn.metrics.pairwise import euclidean_distances 
 from scipy.spatial import distance 
 
-from sklearn.feature_extraction.text import TfidfVectorizer 
-from sklearn.metrics.pairwise import cosine_similarity 
-from sklearn.metrics import pairwise_distances 
-from sklearn.metrics.pairwise import euclidean_distances 
-from scipy.spatial import distance 
-import pandas as pd 
-import numpy as np 
 
 '''heavily inspired by https://www.geeksforgeeks.org/sklearn-feature-extraction-with-tf-idf/'''
 
@@ -30,7 +16,7 @@ txt_adoptable = '../app/data/adoptable_csv.csv'
 scraped_data_adoptable = open('../app/data/adoptable_corpus.txt', 'r').read()
 
 
-## Converting 3D array of array into 1D array 
+## Converting 3D array into 1D array 
 def arr_convert_1d(arr):
     arr = np.array(arr)
     arr = np.concatenate( arr, axis=0 )
@@ -42,10 +28,9 @@ def arr_convert_1d_adopted(arr):
     arr = np.array(arr)
     arr = np.concatenate( arr, axis=0 )
     arr = np.concatenate( arr, axis=0 )
-    # print(arr)
     return arr 
 
-## Cosine Similarity 
+# Cosine Similarity 
 cos = [] 
 def cosine(trans):
     cos.append(cosine_similarity(trans[0], trans[1]))
@@ -56,12 +41,11 @@ def manhatten_distance(trans):
 	manhatten.append(pairwise_distances(trans[0], trans[1], 
 										metric = 'manhattan')) 
 
-## Euclidean Distance 
+# Euclidean Distance 
 euclidean = [] 
 def euclidean_function(vectors): 
 	euc=euclidean_distances(vectors[0], vectors[1]) 
 	euclidean.append(euc) 
-
 
 def convert_adoptable(): 
     dataf_adoptable = pd.DataFrame() 
