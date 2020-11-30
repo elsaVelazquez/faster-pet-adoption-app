@@ -21,7 +21,6 @@ from sklearn.metrics.pairwise import euclidean_distances
 from scipy.spatial import distance 
 import pandas as pd 
 import numpy as np 
-# from tfidf_helpers import arr_convert_1d, cosine, manhatten_distance, euclidean_function
 
 '''heavily inspired by https://www.geeksforgeeks.org/sklearn-feature-extraction-with-tf-idf/'''
 
@@ -115,7 +114,6 @@ class TextClassifierAdopted(object):
         scraped_data=scraped_data_adopted
         df1 = pd.read_csv(str(txt))
         df = df1.fillna("None")  #impute empty records
-        # df.drop(['index', 'status_adopted'], axis = 1, inplace= True)
         df_str = df[["description"]].copy()
         document = ' '.join(df_str['description'].tolist())
         document =[] 
@@ -145,7 +143,7 @@ class TextClassifierAdoptable(object):
 
     def predict_one(self, data):
         cv_transformed = self.cv.transform(data) #counts how many words
-        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
+        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv 
         string_predicted = self.model.predict(tfidf_transformed) 
         length = str(len((str(data))))
         if length == '4':
@@ -157,15 +155,12 @@ class TextClassifierAdoptable(object):
         else:
             res_mnb = ("More Likely Than Not to be Adopted")
         return res_mnb 
-    
-
 
     def tfidf_adoptable(self, data): 
         txt=txt_adoptable
         scraped_data=scraped_data_adoptable
         df1 = pd.read_csv(str(txt))
         df = df1.fillna("None")  #impute empty records
-        # df.drop(['index', 'status_adopted'], axis = 1, inplace= True)
         df_str = df[["description"]].copy()
         document = ' '.join(df_str['description'].tolist())
         document =[] 
@@ -194,7 +189,7 @@ class SentimAnalysis(object):
             
     def sentiment_(self, data): 
         cv_transformed = self.cv.transform(data) #counts how many words
-        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv . 
+        tfidf_transformed = self.tfidf.transform(cv_transformed)  #tf == cv  
         string_predicted = self.model.predict(tfidf_transformed) 
         length = str(len((str(data))))
         if length == '4':
@@ -210,17 +205,24 @@ class SentimAnalysis(object):
 if __name__ == '__main__':
     pass
 
-    ## BEGIN test scripts 
+    ## BEGIN TEST SCRIPTS
     
-    # #instantiate object
+    ##instantiate objects
     # my_classifier_adoptable = TextClassifierAdoptable()
     # my_classifier_adopted = TextClassifierAdopted()
-
     # my_sentim = SentimAnalysis()
     
-    # # # # #test empty string
+    ##test empty string
+    # test_string_pred = ['']
+    
+    ## test string for known cosine sim closer to adopted
     # test_string_pred = ['sweet dog seeks forever home']
-
+    
+    ## test string for known cosine sim closer to adoptable (still in shelters)
+    # test_string_pred = ['female pit']
+    
+    
+    ## run the tests:
     # res_tfidf_adopted = my_classifier_adopted.tfidf_adopted(str(test_string_pred)); 
     # print("ADOPTED: ", res_tfidf_adopted)
     
@@ -230,5 +232,4 @@ if __name__ == '__main__':
     # res_sentiment = my_sentim.sentiment_((test_string_pred)); 
     # print("Your input invokes the following sentiment: ", res_sentiment); 
     
-    
-    ### END test scripts
+    ### END TEST SCRIPTS

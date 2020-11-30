@@ -22,7 +22,7 @@ def submit():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    """Recieve the description to be classified from an input form and use the
+    """Receive the description to be classified from an input form and use the
     models to classify and predict.
     """
 
@@ -40,10 +40,11 @@ def predict():
         
     
     # limit significant figures
+    sig_figs = 6
     tf_adopted_str = str(tf_adopted)
-    tf_adopted = tf_adopted_str[:6]
+    tf_adopted = tf_adopted_str[:sig_figs]
     tf_adoptable_str = str(tf_adoptable)
-    tf_adoptable = tf_adoptable_str[:6]   
+    tf_adoptable = tf_adoptable_str[:sig_figs]   
     sentim = (my_sentim.sentiment_([data])) 
     
 
