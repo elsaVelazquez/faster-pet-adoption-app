@@ -1,6 +1,5 @@
 '''heavily borrowed from https://www.digitalocean.com/community/tutorials/how-to-perform-sentiment-analysis-in-python-3-using-the-natural-language-toolkit-nltk and Galvanize DSI'''
 
-import argparse
 import pickle as pickle
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -201,11 +200,7 @@ class TextClassifier(object):
         
         
         all_pos_words = get_all_words(positive_cleaned_tokens_list)
-        
-        # save_documents = open("pickled_algos/all_pos_words.pickle","wb")
-        # pickle.dump(positive_cleaned_tokens_list, save_documents)
-        # save_documents.close()
-        
+
 
         freq_dist_pos = FreqDist(all_pos_words)
         print("most common ADOPTED words: ", freq_dist_pos.most_common(10))

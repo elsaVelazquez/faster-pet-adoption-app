@@ -9,7 +9,6 @@ settings.json
 crypt.py
 *__pycache__
 creds.txt
-*.ipynb
 .ipynb_checkpoints
 *.ipynb_checkpoints
 aggragted_csv*
@@ -28,3 +27,9 @@ sentiment_analysis_example.py
 sentiment140.csv
 *sentiment140.csv
 */sentiment140.csv
+build_model.py
+corpuses_tfidf_feature_extraction_adoptable.py
+corpuses_tfidf_feature_extraction_adopted.py
+data_EDA.py
+eda.py
+tf_idf_scores.py
