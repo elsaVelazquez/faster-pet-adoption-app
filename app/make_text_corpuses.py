@@ -1,10 +1,10 @@
-''' insired by https://stackoverflow.com/questions/47339698/how-to-convert-csv-file-to-text-file-using-python'''
+''' inspired by https://stackoverflow.com/questions/47339698/how-to-convert-csv-file-to-text-file-using-python'''
 import pandas as pd
 import csv 
 from pandas import DataFrame
 
 
-#ADOPTABLE
+#ADOPTABLE CORPUS
 df_adoptable = pd.read_csv('../app/data/adoptable_csv.csv')
 df = df_adoptable.fillna("None")  #impute empty records
 df_str_adoptable = df[["description"]].copy()
@@ -16,7 +16,7 @@ text_file.close()
 
 
 
-#ADOPTABLE
+#ADOPTED CORPUS
 df_adopted = pd.read_csv('../app/data/adopted_csv.csv')
 df = df_adopted.fillna("None")  #impute empty records
 df_str_adopted = df[["description"]].copy()
