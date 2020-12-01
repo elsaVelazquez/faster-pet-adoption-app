@@ -3,7 +3,6 @@ import pandas as pd
 import csv 
 from pandas import DataFrame
 
-
 #ADOPTABLE CORPUS
 df_adoptable = pd.read_csv('../app/data/adoptable_csv.csv')
 df = df_adoptable.fillna("None")  #impute empty records
@@ -13,8 +12,6 @@ str_adoptable = str(document_adoptable )
 text_file = open("../app/data/adoptable_corpus.txt", "w")
 n = text_file.write(str_adoptable)
 text_file.close()
-
-
 
 #ADOPTED CORPUS
 df_adopted = pd.read_csv('../app/data/adopted_csv.csv')
