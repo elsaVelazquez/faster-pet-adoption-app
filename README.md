@@ -23,8 +23,10 @@ use the QR code with your phone app
 To see more demo projects visit my main page-->
 https://elsa-data-sci.tech/
 ---  
+<br>
 
 The following is my graduation presentation for the Galvanize Data Science Immersive Bootcamp.
+
 ---
 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/full_presentation/full_DSI_presentation-02.jpg" >
