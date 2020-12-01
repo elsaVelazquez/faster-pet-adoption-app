@@ -1,7 +1,8 @@
 # Faster Pet Adoption App
 ## Strategic Marketing Solutions- Use Case: Get Dogs Adopted Out of Animal Shelters Faster
 
-Please feel free to click on my app (work in progress) to input a dog description.
+
+Please feel free to click on my app to input a dog description.  Note that results are anomolous in that they show any input is likely to get a dog adopted.  This is due to the Covid phenomenon, where dogs are flying off the shelves, hence all dogs will are ending up adopted. 
 
 
 click on the link:
