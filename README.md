@@ -9,8 +9,7 @@ Some recommended words are: home, fun, loving, forever.
 Very short descriptions are not recommended.
 
 click on the link:
-[http://3.97.11.148:5081/]http://3.97.11.148:5081/
-
+http://3.97.11.148:5081/
 or
 
 use the QR code with your phone app
