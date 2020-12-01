@@ -20,7 +20,7 @@ use the QR code with your phone app
 
 ---  
 To see more demo projects visit my main page:
-[(https://elsa-data-sci.tech/)](https://elsa-data-sci.tech/)
+[(https://elsa-data-sci.tech/)]https://elsa-data-sci.tech/
 
 ---  
 
