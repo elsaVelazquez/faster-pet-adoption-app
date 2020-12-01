@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import pickle
 from predict_one import TextClassifierAdopted, TextClassifierAdoptable, SentimAnalysis
 
-#instantiate the class
+#instantiate class objects
 clf_adopted = TextClassifierAdopted()
 clf_adoptable = TextClassifierAdoptable()
 my_sentim = SentimAnalysis()
@@ -16,7 +16,7 @@ def index():
 
 @app.route('/submit', methods=['GET'])
 def submit():
-    """Render a page containing a textarea input where the user can paste an
+    """Render a page containing a text area where the user can input an
     description to be classified.  """
     return render_template('submit.html')
 
@@ -26,6 +26,7 @@ def predict():
     models to classify and predict.
     """
 
+    #make the decision to keep or change the description
     data = str(request.form['article_body']) #user input
     pred = str(clf_adopted.predict_one([data])) 
     tf_adopted = (clf_adopted.tfidf_adopted([data])) 
