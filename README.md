@@ -2,7 +2,7 @@
 ## Strategic Marketing Solutions- Use Case: Get Dogs Adopted Out of Animal Shelters Faster
 
 Find out if your shelter's dog description is helping the dog get adopted faster.
-Click on my app link [(http://3.97.11.148:5081/)](http://3.97.11.148:5081/) and input a dog description.  
+Click on my [(http://3.97.11.148:5081/)] app link and input a dog description.  
 Note that results are anomolous in that they show every dog is more likely than not to get a dog adopted since Covid.
 
 
