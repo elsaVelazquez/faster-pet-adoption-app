@@ -23,7 +23,8 @@ To see more demo projects visit my main page:
 https://elsa-data-sci.tech/
 
 ---  
-
+The following is a pdf of my graduation presentation for the Galvanize Data Science Immersive Bootcamp.
+---
 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/full_presentation/full_DSI_presentation-02.jpg" >
 
