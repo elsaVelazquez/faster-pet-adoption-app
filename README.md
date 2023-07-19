@@ -5,13 +5,13 @@ https://www.kaggle.com/velazquezelsa/datasets?campaign=50c1a4cf-95ba-4b4c-9c0c-2
 
 Find out if your shelter's dog description is helping the dog get adopted faster.
 This app helps get dogs adopted faster by guiding shelters on if their words appear more favorable to potential rescuers.
-Click on my app link http://3.97.11.148:5081/ and input a dog description.  
+Click on my app link http://3.91.59.182:8000/ and input a dog description.  
 Note that results are anomolous in that they show every dog is more likely than not to get a dog adopted since Covid, but each input is still independently checked using a K Means algorithm to help guide with wording choice.  
 Some recommended words are: home, fun, loving, forever.
 Very short descriptions are not recommended.
 
 click on the link:
-http://3.97.11.148:5081/
+http://3.91.59.182:8000/
 or
 
 use the QR code with your phone app
