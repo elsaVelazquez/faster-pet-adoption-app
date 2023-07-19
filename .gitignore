@@ -33,3 +33,4 @@ corpuses_tfidf_feature_extraction_adopted.py
 data_EDA.py
 eda.py
 tf_idf_scores.py
+tweets.csv
