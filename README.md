@@ -12,10 +12,6 @@ Very short descriptions are not recommended.
 
 click on the link:
 http://3.91.59.182:8000/
-or
-
-use the QR code with your phone app
-<img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/qr_code.png" >
 
 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/nichi-logo-ears.png" >
@@ -169,3 +165,6 @@ The following is my graduation presentation for the Galvanize Data Science Immer
 ---  
 
 
+This doesn't really work because I did not set it up in amazon store, but it's still cute what it does:
+use the QR code with your phone app
+<img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/qr_code.png" >
