@@ -11,6 +11,7 @@ dominate==2.5.2
 emoji==0.6.0
 enum34==1.1.10
 Flask==1.1.2
+gunicorn==21.1.0
 idna==2.9
 ipykernel==4.10.1
 ipython==5.10.0
@@ -23,6 +24,7 @@ jupyter-core==4.6.3
 MarkupSafe==1.1.1
 nltk==3.5
 numpy==1.25.1
+packaging==23.1
 pandas==2.0.3
 pathlib2==2.3.5
 pexpect==4.8.0
