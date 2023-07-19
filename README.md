@@ -15,7 +15,7 @@ http://3.91.59.182:8000/
 or
 
 use the QR code with your phone app
-<img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/qr-code.png" >
+<img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/qr_code.png" >
 
 
 <img src="https://github.com/elsaVelazquez/faster-pet-adoption-app/blob/master/app/static/img/nichi-logo-ears.png" >
